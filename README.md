@@ -1,3 +1,4 @@
+
 ## Summary
 Scripts to bruteforce https://aesencryption.net/ encrypted data with multithreading support primarily using wordlists.
 
@@ -22,7 +23,9 @@ As it's just normal CBC with no proper verification there will be many valid key
 **Sorting the results:**
 Even after verifying the results there's usually about 10% of the initial wordlist that's still valid. To try and rank these and make possible plaintexts easier to identify they're sorted by their Shannon entropy. The actual valid plaintext will usually have the lowest entropy compared to all other possibilities. Otherwise the user will have to make educated guesses on the format and search through the results.
 
+## C++ Version
+Equivalent feature-wise to the Python version including multithreading, but around 7x faster with constant 2mb memory usage. Tested compilation under VS2019 c++14 both dynamically and statically linked to OpenSSL with vcpkg.
 
-## Dependancies
+## Python Dependancies
  - numpy
  - pycryptodome
